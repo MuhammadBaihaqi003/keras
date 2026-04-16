@@ -604,7 +604,9 @@ class TextVectorization(Layer):
 
                         if inputs_np.ndim == 0:
                             res = split_element(inputs_np.item())
-                            inputs = tf_utils.ensure_tensor(res, dtype=tf.string)
+                            inputs = tf_utils.ensure_tensor(
+                                res, dtype=tf.string
+                            )
                         else:
                             res_list = [split_element(x) for x in inputs_np]
                             try:
